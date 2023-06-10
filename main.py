@@ -57,7 +57,7 @@ def huffman_decode(encoded_text, huffman_tree):
     return decoded_text
 
 # Пример использования
-text = "Hello Synergy!"
+text = input("enter the text and press enter: ")
 freq_dict = defaultdict(int)
 for char in text:
     freq_dict[char] += 1
