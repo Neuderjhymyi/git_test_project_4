@@ -68,6 +68,7 @@ huffman_codes = build_huffman_codes(huffman_tree)
 encoded_text = huffman_encode(text, huffman_codes)
 decoded_text = huffman_decode(encoded_text, huffman_tree)
 
+
 print("Original text:", text)
 print("#" * 60)
 print("Encoded text:", encoded_text)
