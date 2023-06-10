@@ -58,6 +58,7 @@ def huffman_decode(encoded_text, huffman_tree):
 
 # Пример использования
 text = input("enter the text and press enter: ")
+
 freq_dict = defaultdict(int)
 for char in text:
     freq_dict[char] += 1
@@ -68,5 +69,7 @@ encoded_text = huffman_encode(text, huffman_codes)
 decoded_text = huffman_decode(encoded_text, huffman_tree)
 
 print("Original text:", text)
+print("#" * 60)
 print("Encoded text:", encoded_text)
+print("#" * 60)
 print("Decoded text:", decoded_text)
