@@ -1,6 +1,7 @@
 import heapq
 from collections import defaultdict
 
+
 # Класс для создания узлов дерева Хаффмана
 class HuffmanNode:
     def __init__(self, freq, char=None):
@@ -12,6 +13,7 @@ class HuffmanNode:
     # Метод для сравнения узлов по частоте
     def __lt__(self, other):
         return self.freq < other.freq
+
 
 # Функция для создания дерева Хаффмана
 def build_huffman_tree(freq_dict):
@@ -26,6 +28,7 @@ def build_huffman_tree(freq_dict):
         heapq.heappush(priority_queue, parent)
     return priority_queue[0]
 
+
 # Функция для создания словаря кодировок на основе дерева Хаффмана
 def build_huffman_codes(node, prefix="", codes={}):
     if node.char is not None:
@@ -35,12 +38,14 @@ def build_huffman_codes(node, prefix="", codes={}):
         build_huffman_codes(node.right, prefix + "1", codes)
     return codes
 
+
 # Функция для кодирования текста с помощью словаря кодировок
 def huffman_encode(text, codes):
     encoded_text = ""
     for char in text:
         encoded_text += codes[char]
     return encoded_text
+
 
 # Функция для декодирования текста на основе дерева Хаффмана
 def huffman_decode(encoded_text, huffman_tree):
